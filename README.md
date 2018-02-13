@@ -3,6 +3,11 @@ Learn to fly with [Thundra](https://www.thundra.io/) & AWS Lambda quickly.
 
 We used [serverless](https://serverless.com/) plugin for deploying and invoking lambdas in these examples.
 
+You can install **serverless** easily by:
+```bash
+npm install serverless -g
+```
+
 ## Hello World Project
 This is a simple example to get started with Thundra. 
 
