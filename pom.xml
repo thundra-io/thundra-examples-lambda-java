@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>hello-world</module>
+        <module>image-link-extractor</module>
+    </modules>
+
+    <properties>
+        <thundra.version>2.1.0</thundra.version>
+        <maven.shade.plugin.version>2.3</maven.shade.plugin.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <groupId>io.thundra.examples.java</groupId>
+    <artifactId>examples-java</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-lambda-java-core</artifactId>
+                <version>1.1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-lambda</artifactId>
+                <version>1.11.118</version>
+            </dependency>
+            <!--Audit (trace) support if you need-->
+            <dependency>
+                <groupId>com.opsgenie.thundra</groupId>
+                <artifactId>thundra-lambda-audit</artifactId>
+                <version>${thundra.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.opsgenie.thundra</groupId>
+                <artifactId>thundra-audit-instrument</artifactId>
+                <version>${thundra.version}</version>
+            </dependency>
+
+            <!-- Stat (metric) support if you need -->
+            <dependency>
+                <groupId>com.opsgenie.thundra</groupId>
+                <artifactId>thundra-lambda-stat</artifactId>
+                <version>${thundra.version}</version>
+            </dependency>
+            <!-- Log support if you need -->
+            <dependency>
+                <groupId>com.opsgenie.thundra</groupId>
+                <artifactId>thundra-lambda-log</artifactId>
+                <version>${thundra.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.opsgenie.thundra</groupId>
+                <artifactId>thundra-audit-profile</artifactId>
+                <version>${thundra.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${maven.shade.plugin.version}</version>
+                    <configuration>
+                        <createDependencyReducedPom>false</createDependencyReducedPom>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>thundra-releases</id>
+            <name>Thundra Releases</name>
+            <url>http://repo.thundra.io/content/repositories/thundra-releases</url>
+        </repository>
+    </repositories>
+
+
+</project>

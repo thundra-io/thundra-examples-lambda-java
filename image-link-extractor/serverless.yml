@@ -1,0 +1,35 @@
+service: image-link-extractor
+
+custom:
+  deploymentBucket: #TODO: enter your AWS S3 deployment bucket here
+  thundraApiKey: #TODO: enter your API key here
+  stage: dev #Configure your stage if you want
+  region: us-west-2 #Configure your AWS region if you want
+  profile: default #Configure your AWS profile if you want
+
+package:
+  artifact: target/image-link-extractor-1.0-SNAPSHOT.jar
+
+provider:
+  name: aws
+  runtime: java8
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  profile: ${self:custom.profile}
+  deploymentBucket: ${self:custom.deploymentBucket}
+  memorySize: 1024
+  timeout: 300
+  environment:
+    thundra_apiKey: ${self:custom.thundraApiKey}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:*
+      Resource: [
+        "*"
+      ]
+
+functions:
+  image-link-extractor:
+      name: image-link-extractor
+      handler: io.thundra.imagelinkextractor.ImageLinkExtractorHandler
