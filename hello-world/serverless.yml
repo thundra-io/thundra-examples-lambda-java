@@ -1,0 +1,35 @@
+service: hello-world
+
+custom:
+  deploymentBucket: #TODO: enter your AWS S3 deployment bucket here
+  thundraApiKey: #TODO: enter your API key here
+  stage: dev #Configure your stage if you want
+  region: us-west-2 #Configure your AWS region if you want
+  profile: default #Configure your AWS profile if you want
+
+package:
+  artifact: target/hello-world-1.0-SNAPSHOT.jar
+
+provider:
+  name: aws
+  runtime: java8
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  profile: ${self:custom.profile}
+  deploymentBucket: ${self:custom.deploymentBucket}
+  memorySize: 256
+  timeout: 300
+  environment:
+    thundra_apiKey: ${self:custom.thundraApiKey}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:*
+      Resource: [
+        "*"
+      ]
+
+functions:
+  hello-world:
+      name: hello-world
+      handler: io.thundra.helloworld.HelloWorldHandler
