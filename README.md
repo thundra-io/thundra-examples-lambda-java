@@ -1,2 +1,15 @@
-# examples
-Thundra Example Projects
+# Thundra Java Example Projects
+Learn to fly with [Thundra](https://www.thundra.io/) & AWS Lambda quickly.
+
+We used [serverless](https://serverless.com/) plugin for deploying and invoking lambdas in these examples.
+
+## Hello World Project
+This is a simple example to get started with Thundra. 
+
+With this [example](./hello-world) you will learn how to observe the invocation metrics of lambda functions on Thundra.
+
+## Image Link Extractor Project
+This is the second tier example to get started with Thundra.
+
+With this [example](./image-link-extractor) you will learn how to observe invocation, log and stat metrics 
+of lambda functions on Thundra.
