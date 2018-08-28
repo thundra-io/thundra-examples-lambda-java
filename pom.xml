@@ -9,7 +9,7 @@
     </modules>
 
     <properties>
-        <thundra.version>2.1.0</thundra.version>
+        <thundra.version>2.7.3</thundra.version>
         <maven.shade.plugin.version>2.3</maven.shade.plugin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
