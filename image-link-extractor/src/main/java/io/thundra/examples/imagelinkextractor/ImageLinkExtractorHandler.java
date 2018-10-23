@@ -1,7 +1,7 @@
-package io.thundra.imagelinkextractor;
+package io.thundra.examples.imagelinkextractor;
 
 import com.amazonaws.services.lambda.runtime.Context;
-import com.opsgenie.thundra.lambda.core.ThundraLambdaRequestHandler;
+import io.thundra.agent.lambda.core.handler.request.LambdaRequestHandler;
 
 import java.util.List;
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.Map;
  * @version 08/02/2018 13:15.
  */
 public class ImageLinkExtractorHandler implements
-        ThundraLambdaRequestHandler<ImageLinkExtractorRequest, ImageLinkExtractorResponse> {
+        LambdaRequestHandler<ImageLinkExtractorRequest, ImageLinkExtractorResponse> {
 
     private final ImageLinkExtractorService imageLinkExtractorService = new ImageLinkExtractorService();
 
@@ -20,4 +20,5 @@ public class ImageLinkExtractorHandler implements
         Map<String, List<String>> imageSources = imageLinkExtractorService.extractImageSources(imageLinkExtractorRequest.getUrls());
         return new ImageLinkExtractorResponse(imageSources);
     }
+
 }

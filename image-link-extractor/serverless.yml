@@ -8,7 +8,7 @@ custom:
   profile: default #Configure your AWS profile if you want
 
 package:
-  artifact: target/image-link-extractor-1.0-SNAPSHOT.jar
+  artifact: target/image-link-extractor-2.0-SNAPSHOT.jar
 
 provider:
   name: aws
@@ -32,4 +32,4 @@ provider:
 functions:
   image-link-extractor:
       name: image-link-extractor
-      handler: io.thundra.imagelinkextractor.ImageLinkExtractorHandler
+      handler: io.thundra.examples.imagelinkextractor.ImageLinkExtractorHandler

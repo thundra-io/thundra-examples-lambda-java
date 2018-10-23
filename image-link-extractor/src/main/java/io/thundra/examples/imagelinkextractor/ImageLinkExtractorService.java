@@ -1,7 +1,6 @@
-package io.thundra.imagelinkextractor;
+package io.thundra.examples.imagelinkextractor;
 
-import com.opsgenie.thundra.audit.Auditable;
-import com.opsgenie.thundra.log.MonitoredLogManager;
+import io.thundra.agent.trace.instrument.config.Traceable;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -9,25 +8,30 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.lang.reflect.Modifier;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Fazilet Ozer
  * @version 08/02/2018 13:23.
  */
-@Auditable(
-        modifiers = {Modifier.PUBLIC, Modifier.PRIVATE},
-        auditArguments = true,
-        auditArgumentNames = true,
+@Traceable(
+        methodModifiers = { Modifier.PUBLIC, Modifier.PRIVATE },
+        traceArguments = true,
+        traceArgumentNames = true,
         serializeArgumentsAsJson = true,
-        auditReturnValue = true,
+        traceReturnValue = true,
         serializeReturnValueAsJson = true
 )
 public class ImageLinkExtractorService {
 
-    private final Logger logger = MonitoredLogManager.getLogger(getClass());
+    private final Logger logger = Logger.getLogger(getClass());
 
-    public ImageLinkExtractorService() {}
+    public ImageLinkExtractorService() {
+
+    }
 
     public Map<String, List<String>> extractImageSources(List<String> urls) {
         Map<String, List<String>> extractedImageSources = new HashMap<>();
@@ -56,4 +60,5 @@ public class ImageLinkExtractorService {
         }
         return imageSources;
     }
+
 }

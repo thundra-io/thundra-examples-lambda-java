@@ -5,7 +5,7 @@
     <parent>
         <artifactId>examples-java</artifactId>
         <groupId>io.thundra.examples.java</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,12 +13,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-lambda-java-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.opsgenie.thundra</groupId>
-            <artifactId>thundra-lambda-audit</artifactId>
+            <groupId>io.thundra.agent</groupId>
+            <artifactId>thundra-agent-lambda-trace</artifactId>
         </dependency>
     </dependencies>
 

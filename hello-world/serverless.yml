@@ -8,7 +8,7 @@ custom:
   profile: default #Configure your AWS profile if you want
 
 package:
-  artifact: target/hello-world-1.0-SNAPSHOT.jar
+  artifact: target/hello-world-2.0-SNAPSHOT.jar
 
 provider:
   name: aws
@@ -32,4 +32,4 @@ provider:
 functions:
   hello-world:
       name: hello-world
-      handler: io.thundra.helloworld.HelloWorldHandler
+      handler: io.thundra.examples.helloworld.HelloWorldHandler

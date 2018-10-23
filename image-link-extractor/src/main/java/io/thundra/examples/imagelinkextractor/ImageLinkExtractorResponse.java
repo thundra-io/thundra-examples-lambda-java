@@ -1,4 +1,4 @@
-package io.thundra.imagelinkextractor;
+package io.thundra.examples.imagelinkextractor;
 
 import java.util.List;
 import java.util.Map;
@@ -8,6 +8,7 @@ import java.util.Map;
  * @version 08/02/2018 13:23.
  */
 public class ImageLinkExtractorResponse {
+
     private Map<String, List<String>> extractedImages;
 
     public ImageLinkExtractorResponse(Map<String, List<String>> extractedImages) {
@@ -22,4 +23,5 @@ public class ImageLinkExtractorResponse {
         this.extractedImages = extractedImages;
         return this;
     }
+
 }

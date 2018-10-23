@@ -1,19 +1,12 @@
-package io.thundra.helloworld;
+package io.thundra.examples.helloworld;
 
 /**
  * @author Canberk Morelli
  * @version 08/02/18.
  */
-public class HelloWorldRequest {
+public class HelloWorldResponse {
 
     private String msg;
-
-    public HelloWorldRequest() {
-    }
-
-    public HelloWorldRequest(String msg){
-        this.msg = msg;
-    }
 
     public String getMsg() {
         return msg;
@@ -21,6 +14,10 @@ public class HelloWorldRequest {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public HelloWorldResponse(String msg) {
+        this.msg = msg + " Thundra!";
     }
 
 }

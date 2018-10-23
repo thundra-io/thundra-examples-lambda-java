@@ -11,10 +11,10 @@ npm install serverless -g
 ## Hello World Project
 This is a simple example to get started with Thundra. 
 
-With this [example](./hello-world) you will learn how to observe the invocation metrics of lambda functions on Thundra.
+With this [example](./hello-world) you will learn how to observe the invocation of lambda functions on Thundra.
 
 ## Image Link Extractor Project
 This is the second tier example to get started with Thundra.
 
-With this [example](./image-link-extractor) you will learn how to observe invocation, log and stat metrics 
+With this [example](./image-link-extractor) you will learn how to observe invocation, trace, metrics and logs 
 of lambda functions on Thundra.

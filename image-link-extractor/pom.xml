@@ -5,7 +5,7 @@
     <parent>
         <artifactId>examples-java</artifactId>
         <groupId>io.thundra.examples.java</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,24 +13,25 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-lambda-java-core</artifactId>
+            <groupId>io.thundra.agent</groupId>
+            <artifactId>thundra-agent-lambda-trace</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.opsgenie.thundra</groupId>
-            <artifactId>thundra-lambda-audit</artifactId>
+            <groupId>io.thundra.agent</groupId>
+            <artifactId>thundra-agent-trace-instrument</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.opsgenie.thundra</groupId>
-            <artifactId>thundra-audit-instrument</artifactId>
+            <groupId>io.thundra.agent</groupId>
+            <artifactId>thundra-agent-lambda-metric</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.opsgenie.thundra</groupId>
-            <artifactId>thundra-lambda-stat</artifactId>
+            <groupId>io.thundra.agent</groupId>
+            <artifactId>thundra-agent-lambda-log</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.opsgenie.thundra</groupId>
-            <artifactId>thundra-lambda-log</artifactId>
+            <groupId>io.thundra.agent</groupId>
+            <artifactId>thundra-agent-log-integrations-log4j1</artifactId>
+            <version>${thundra.agent.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jsoup</groupId>

@@ -1,4 +1,4 @@
-package io.thundra.imagelinkextractor;
+package io.thundra.examples.imagelinkextractor;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import java.util.List;
  * @version 08/02/2018 13:23.
  */
 public class ImageLinkExtractorRequest {
+
     private List<String> urls;
 
     public ImageLinkExtractorRequest() {
@@ -24,4 +25,5 @@ public class ImageLinkExtractorRequest {
         this.urls = urls;
         return this;
     }
+
 }
