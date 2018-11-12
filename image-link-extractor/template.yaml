@@ -13,7 +13,7 @@ Globals:
 
 Resources:
 
-    ThundraHelloWorld:
+    ThundraImageLinkExtractor:
         Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Properties:
             CodeUri: s3://thundra-deploy-staging-oregon/deployments/image-link-extractor/image-link-extractor-2.0-SNAPSHOT.jar
