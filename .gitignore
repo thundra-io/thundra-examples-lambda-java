@@ -17,6 +17,7 @@
 hs_err_pid*
 
 .idea
+.DS_Store
 /.idea/
 /target/
 /.serverless/

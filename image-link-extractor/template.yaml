@@ -1,9 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-    hello-world
+    image-link-extractor
 
-    Sample SAM Template for Thundra hello-world
+    Sample SAM Template for Thundra image-link-extractor
 
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
@@ -16,8 +16,8 @@ Resources:
     ThundraHelloWorld:
         Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Properties:
-            CodeUri: s3://thundra-deploy-staging-oregon/deployments/hello-world/hello-world-2.0-SNAPSHOT.jar
-            Handler: io.thundra.examples.helloworld.HelloWorldHandler
+            CodeUri: s3://thundra-deploy-staging-oregon/deployments/image-link-extractor/image-link-extractor-2.0-SNAPSHOT.jar
+            Handler: io.thundra.examples.imagelinkextractor.ImageLinkExtractorHandler
             Runtime: java8
 
             Events:
