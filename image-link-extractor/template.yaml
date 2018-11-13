@@ -19,3 +19,4 @@ Resources:
             CodeUri: s3://thundra-deploy-staging-oregon/deployments/image-link-extractor/image-link-extractor-2.0-SNAPSHOT.jar
             Handler: io.thundra.examples.imagelinkextractor.ImageLinkExtractorHandler
             Runtime: java8
+            MemorySize: 1024
