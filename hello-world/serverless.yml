@@ -6,7 +6,6 @@ custom:
   stage: dev #Configure your stage if you want
   region: us-west-2 #Configure your AWS region if you want
   profile: default #Configure your AWS profile if you want
-  layerVersion: 14
 
 package:
   artifact: target/hello-world-2.0-SNAPSHOT.jar
@@ -36,7 +35,4 @@ functions:
       handler: io.thundra.examples.helloworld.HelloWorldHandler
   hello-world-service:
       name: hello-world-service
-      handler: io.thundra.agent.lambda.core.handler.ThundraLambdaHandler
-      layers:
-        - arn:aws:lambda:${self:custom.region}:269863060030:layer:thundra-lambda-java-layer:${self:custom.layerVersion}
-      thundra_agent_lambda_handler: io.thundra.examples.helloworld.HelloWorldRequestHandler
+      handler: io.thundra.examples.helloworld.HelloWorldRequestHandler
